@@ -41,7 +41,7 @@ function FileUpload() {
 
             try {
                 await axios.post('https://file-upload-backend.netlify.app/upload', formData, {
-                    headers: { 'Content-Type': 'multipart/form-data' },
+                    headers: { 'Content-Type': 'multipart/form-data', "Access-Control-Allow-Origin", "*", "Access-Control-Allow-Headers", "X-Requested-With" },
                     withCredentials: true,
                     onUploadProgress: (progressEvent) => {
                         const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
